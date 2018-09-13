@@ -19,6 +19,7 @@ const app = new Vue({
                     vm.source_address = '';
                     vm.destination_address = '';
                     vm.cost = '';
+                    vm.fetch();
                 }
             }).catch(function(e) {
                 vm.error = '' + e;
@@ -45,6 +46,7 @@ const app = new Vue({
                     vm.error = 'Error: ' + response.data.error;
                 }else{
                     vm.success = response.data.success;
+                    vm.fetch();
                 }
             }).catch(function(e) {
                 vm.error = '' + e;
@@ -63,6 +65,7 @@ const app = new Vue({
                     vm.error = 'Error: ' + response.data.error;
                 }else{
                     vm.success = response.data.success;
+                    vm.fetch();
                 }
             }).catch(function(e) {
                 vm.error = '' + e;
@@ -77,7 +80,3 @@ const app = new Vue({
         this.packages = initial_packages;
     }
 });
-
-setInterval(function(){
-    app.fetch();
-},10000);
