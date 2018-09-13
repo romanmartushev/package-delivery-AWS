@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/package/home', function(){
+    return view('aws/index')->with(['packages' => json_encode(\App\Package::all())]);
+});
+Route::get('/package/create', 'PackageController@create');
+Route::get('/package/fetch', 'PackageController@receive');
+Route::post('/package/update', 'PackageController@update');
+Route::post('/package/delete', 'PackageController@delete');
