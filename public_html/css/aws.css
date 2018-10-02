@@ -1,0 +1,35 @@
+/**
+ * Plain divider, makes a horizontal solid line the same size as the to navigation borders
+ * Usage:
+ * <hr class="divider" />
+ */
+.divider {
+    border-top: 7px solid #F2F3F3;
+    margin-top: 52px;
+    margin-top: 3.25rem;
+    margin-bottom: 52px;
+    margin-bottom: 3.25rem; }
+/**
+ * Slash divider, makes a horizontal slashed line
+ * Usage:
+ * <hr class="divider divider-slash" />
+ */
+.divider-slash {
+    border: none;
+    height: 17.5px;
+    width: 100%;
+    position: relative;
+    overflow: hidden; }
+.divider-slash:after {
+    position: absolute;
+    top: -52px;
+    top: -3.25rem;
+    left: -52px;
+    left: -3.25rem;
+    display: block;
+    content: "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////";
+    font-size: 66px;
+    font-size: 4.125rem;
+    color: #F2F3F3;
+    letter-spacing: -5px;
+    font-weight: 700; }
